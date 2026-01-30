@@ -1,26 +1,16 @@
-let threatLevel = 20;
-
-async function getChuckFact() {
-    const display = document.getElementById('joke-display');
-    const bar = document.getElementById('power-bar');
-    
-    display.style.color = "#444";
-    display.innerText = "BYPASSING SECURITY...";
+async function getDammeWisdom() {
+    const jokeDisplay = document.getElementById('joke-display');
+    jokeDisplay.innerText = "Focusing... Analyzing the potential of the air..."; //
 
     try {
-        const response = await fetch('https://api.chucknorris.io/jokes/random');
+        const response = await fetch('https://api.chucknorris.io/jokes/random'); //
         const data = await response.json();
-        
-        display.style.color = "#eee";
-        display.innerText = `"${data.value}"`;
 
-        // Update meter
-        threatLevel = Math.min(threatLevel + 8, 100);
-        bar.style.width = threatLevel + "%";
-        
-        if (threatLevel > 80) bar.style.background = "#ff0000";
+        // Replace 'Chuck Norris' with your pet's name
+        let dammeifiedJoke = data.value.replace(/Chuck Norris/g, "Jean-Claw Van Damme"); //
+        jokeDisplay.innerText = `"${dammeifiedJoke}"`; //
 
     } catch (error) {
-        display.innerText = "CHUCK NORRIS REFUSED THE CONNECTION.";
+        jokeDisplay.innerText = "The connection snapped like a bad stunt."; //
     }
 }
