@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(circle, #1a1a1a, #000000);
+    background: radial-gradient(circle, #1a1a1a, #000);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,36 +10,34 @@ body {
 }
 
 .game-container {
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(30, 30, 30, 0.95);
     border: 3px solid #ffd700;
     border-radius: 30px;
     padding: 30px;
-    width: 360px;
+    width: 350px;
     text-align: center;
-    box-shadow: 0 0 50px rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
 }
 
-h1 { font-family: 'Bangers', cursive; font-size: 2.8rem; letter-spacing: 2px; margin: 0; text-shadow: 2px 2px #000; }
+h1 { font-family: 'Bangers', cursive; font-size: 2.8rem; margin: 0; }
 .red-text { color: #ff3e3e; }
 
-/* Strength Bar */
 .stat-container { margin: 15px 0; }
-.stat-label { font-size: 11px; letter-spacing: 3px; color: #888; display: block; margin-bottom: 5px; }
-.bar-bg { background: #111; height: 12px; border-radius: 6px; border: 1px solid #333; overflow: hidden; }
-.bar-fill { background: linear-gradient(90deg, #ffd700, #ffae00); width: 15%; height: 100%; transition: width 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.stat-label { font-size: 10px; letter-spacing: 2px; color: #888; }
+.bar-bg { background: #111; height: 12px; border-radius: 6px; margin-top: 5px; overflow: hidden; border: 1px solid #333; }
+.bar-fill { background: #ffd700; width: 10%; height: 100%; transition: width 0.5s ease; }
 
 #pet-stage { height: 180px; display: flex; justify-content: center; align-items: center; }
-#pet { font-size: 55px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
-.pet-legs { font-size: 40px; display: flex; justify-content: center; transition: 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5); }
+#pet { font-size: 60px; transition: transform 0.3s ease; }
+.pet-legs { font-size: 40px; display: flex; justify-content: center; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
-/* Animation class triggered by JS */
-.doing-splits .pet-legs { transform: scaleX(4.5) translateY(22px); }
+.doing-splits .pet-legs { transform: scaleX(4.5) translateY(20px); }
 
-.speech-bubble { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 15px; border-left: 5px solid #ff3e3e; margin: 25px 0; min-height: 70px; display: flex; align-items: center; }
-#joke-display { font-style: italic; font-size: 0.95rem; line-height: 1.4; margin: 0; color: #ddd; }
+.speech-bubble { background: #222; padding: 15px; border-radius: 15px; border-left: 5px solid #ff3e3e; margin: 20px 0; min-height: 60px; }
+#joke-display { font-style: italic; color: #ddd; font-size: 0.9rem; }
 
-.buttons { display: flex; flex-direction: column; gap: 10px; }
-.btn { border: none; padding: 14px; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-.split-btn { background: #ff3e3e; color: white; box-shadow: 0 5px 15px rgba(255, 62, 62, 0.3); }
-.wisdom-btn { background: #ffd700; color: black; box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); }
-.btn:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); }
+.btn { border: none; padding: 14px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; margin-bottom: 10px; transition: 0.2s; }
+.split-btn { background: #ff3e3e; color: white; }
+.wisdom-btn { background: #ffd700; color: black; }
+.btn:hover { transform: scale(1.03); filter: brightness(1.2); }
+
