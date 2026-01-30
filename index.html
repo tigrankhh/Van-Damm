@@ -3,32 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jean-Claw Van Damme: Virtual Pet</title>
+    <title>CHUCK NORRIS | Tactical Fact Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="scanner-line"></div>
     <div class="game-container">
-        <h1>Jean-Claw Van Damme</h1>
+        <header>
+            <div class="system-status">SYSTEM STATUS: OVERLOAD</div>
+            <h1>CHUCK <span class="orange-text">NORRIS</span></h1>
+            <div class="stat-container">
+                <span class="stat-label">GLOBAL THREAT LEVEL</span>
+                <div class="bar-bg"><div id="threat-bar" class="bar-fill"></div></div>
+            </div>
+        </header>
         
         <div id="pet-stage">
-            <div id="pet" class="pet-idle">
-                <div class="pet-body">🥋</div>
-                <div class="pet-legs">
-                    <span class="leg left">/</span>
-                    <span class="leg right">\</span>
+            <div id="chuck-avatar">
+                <div class="beard">🧔</div>
+                <div class="torso">🥋</div>
+                <div class="legs">
+                    <span class="leg">/</span><span class="leg">\</span>
                 </div>
             </div>
         </div>
 
         <div class="ui">
-            <p id="joke-display">"I am fascinated by air. Click a button to train me."</p>
+            <div class="display-box">
+                <p id="joke-display">"Chuck Norris doesn't read books. He stares them down until he gets the information he wants."</p>
+            </div>
             <div class="buttons">
-                <button onclick="doSplits()">Do The Splits</button>
-                <button onclick="tellJoke()">Local Wisdom</button>
-                <button onclick="getDammeWisdom()">Global Wisdom</button>
+                <button class="btn kick-btn" onclick="doRoundhouse()">ROUNDHOUSE KICK</button>
+                <button class="btn wisdom-btn" onclick="getChuckFact()">EXTRACT FACT</button>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
     <script src="damme-api.js"></script>
 </body>
