@@ -3,42 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jean-Claw Van Damme | The Dojo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>CHUCK NORRIS | System Lockdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
+    <div class="scanner-line"></div>
+    <div class="container">
         <header>
-            <h1>JEAN-CLAW <span class="red-text">VAN DAMME</span></h1>
-            <div class="stat-container">
-                <span class="stat-label">STRENGTH LEVEL</span>
-                <div class="bar-bg"><div id="strength-bar" class="bar-fill"></div></div>
-            </div>
+            <div class="status-blink">SYSTEM: ACTIVE</div>
+            <h1>CHUCK <span class="orange">NORRIS</span></h1>
+            <p class="tagline">FACT GENERATOR V.2.0</p>
         </header>
-        
-        <div id="pet-stage">
-            <div id="pet">
-                <div class="pet-head">🕶️</div>
-                <div class="pet-body">🥋</div>
-                <div class="pet-legs">
-                    <span class="leg">/</span><span class="leg">\</span>
-                </div>
+
+        <div class="power-meter">
+            <div class="meter-label">THREAT LEVEL</div>
+            <div class="bar-outer">
+                <div id="power-bar" class="bar-inner"></div>
             </div>
         </div>
 
-        <div class="ui">
-            <div class="speech-bubble">
-                <p id="joke-display">"I am fascinated by air. Every breath is a kick to the soul."</p>
-            </div>
-            <div class="buttons">
-                <button class="btn split-btn" onclick="doSplits()">THE EPIC SPLIT</button>
-                <button class="btn wisdom-btn" onclick="getDammeWisdom()">CHANNEL WISDOM</button>
-            </div>
+        <div class="joke-window">
+            <div class="corner tl"></div><div class="corner tr"></div>
+            <p id="joke-text">"The universe exists because Chuck Norris hasn't finished it yet."</p>
+            <div class="corner bl"></div><div class="corner br"></div>
         </div>
+
+        <button class="kick-btn" onclick="getChuckFact()">
+            INITIATE ROUNDHOUSE KICK
+        </button>
     </div>
-
-    <script src="script.js"></script>
-    <script src="damme-api.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
