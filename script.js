@@ -1,29 +1,27 @@
-// Function for the split animation
-function doSplits() {
-    const pet = document.getElementById('pet');
-    const display = document.getElementById('joke-display');
+let threatLevel = 25;
+
+function updateThreat(val) {
+    threatLevel = Math.min(threatLevel + val, 100);
+    const bar = document.getElementById('threat-bar');
+    bar.style.width = threatLevel + "%";
     
-    pet.classList.add('doing-splits');
-    display.innerText = "HNNNNGGGH... Focus. Tension. Result.";
-    
-    setTimeout(() => {
-        pet.classList.remove('doing-splits');
-        display.innerText = "I am centered.";
-    }, 2000);
+    if (threatLevel > 80) {
+        bar.style.background = "red";
+        bar.style.boxShadow = "0 0 15px red";
+    }
 }
 
-// Function to pull random jokes from internal_wisdom.json
-async function tellJoke() {
+function doRoundhouse() {
+    const avatar = document.getElementById('chuck-avatar');
     const display = document.getElementById('joke-display');
     
-    try {
-        const response = await fetch('internal_wisdom.json');
-        const jokes = await response.json(); //
-        
-        // Select a random joke from your local list
-        const randomIndex = Math.floor(Math.random() * jokes.length);
-        display.innerText = `"${jokes[randomIndex]}"`;
-    } catch (error) {
-        display.innerText = "The scroll is empty. Try again.";
-    }
+    avatar.classList.add('kicking');
+    display.innerText = "ROUNDHOUSE KICK INITIATED...";
+    
+    updateThreat(10);
+
+    setTimeout(() => {
+        avatar.classList.remove('kicking');
+        display.innerText = "Justice has been served. The laws of physics have apologized.";
+    }, 6000);
 }
