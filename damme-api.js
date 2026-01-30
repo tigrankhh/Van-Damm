@@ -1,16 +1,15 @@
-async function getDammeWisdom() {
-    const jokeDisplay = document.getElementById('joke-display');
-    jokeDisplay.innerText = "Focusing... Analyzing the potential of the air..."; //
+async function getChuckFact() {
+    const display = document.getElementById('joke-display');
+    display.innerText = "ACCESSING CLASSIFIED SATELLITE...";
 
     try {
-        const response = await fetch('https://api.chucknorris.io/jokes/random'); //
+        const response = await fetch('https://api.chucknorris.io/jokes/random');
         const data = await response.json();
+        
+        display.innerText = `"${data.value}"`;
+        updateThreat(5); // Mental threat increases
 
-        // Replace 'Chuck Norris' with your pet's name
-        let dammeifiedJoke = data.value.replace(/Chuck Norris/g, "Jean-Claw Van Damme"); //
-        jokeDisplay.innerText = `"${dammeifiedJoke}"`; //
-
-    } catch (error) {
-        jokeDisplay.innerText = "The connection snapped like a bad stunt."; //
+    } catch (e) {
+        display.innerText = "ERROR: Chuck Norris blocked the internet's access to him.";
     }
 }
