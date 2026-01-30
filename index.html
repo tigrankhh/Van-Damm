@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Claw Van Damme: The Dojo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>JEAN-CLAW <span class="red-text">VAN DAMME</span></h1>
+            <div class="stat-container">
+                <span class="stat-label">STRENGTH LEVEL</span>
+                <div class="bar-bg"><div id="strength-bar" class="bar-fill"></div></div>
+            </div>
+        </header>
+        
+        <div id="pet-stage">
+            <div id="pet">
+                <div class="pet-head">🕶️</div>
+                <div class="pet-body">🥋</div>
+                <div class="pet-legs">
+                    <span class="leg">/</span><span class="leg">\</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui">
+            <div class="speech-bubble">
+                <p id="joke-display">"I am fascinated by air. Every breath is a kick to the soul."</p>
+            </div>
+            <div class="buttons">
+                <button class="btn split-btn" onclick="doSplits()">THE EPIC SPLIT</button>
+                <button class="btn wisdom-btn" onclick="getDammeWisdom()">CHANNEL WISDOM</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="damme-api.js"></script>
+</body>
+</html>
