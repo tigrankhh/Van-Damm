@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHUCK NORRIS | System Lockdown</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>CHUCK NORRIS | Tactical Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scanner-line"></div>
     <div class="container">
         <header>
-            <div class="status-blink">SYSTEM: ACTIVE</div>
+            <div class="system-status">STATUS: OVERLOAD</div>
             <h1>CHUCK <span class="orange">NORRIS</span></h1>
-            <p class="tagline">FACT GENERATOR V.2.0</p>
         </header>
 
-        <div class="power-meter">
-            <div class="meter-label">THREAT LEVEL</div>
-            <div class="bar-outer">
-                <div id="power-bar" class="bar-inner"></div>
-            </div>
+        <div class="threat-meter">
+            <span class="label">CURRENT THREAT LEVEL</span>
+            <div class="meter-bg"><div id="power-bar" class="meter-fill"></div></div>
         </div>
 
-        <div class="joke-window">
-            <div class="corner tl"></div><div class="corner tr"></div>
-            <p id="joke-text">"The universe exists because Chuck Norris hasn't finished it yet."</p>
-            <div class="corner bl"></div><div class="corner br"></div>
+        <div class="display-box">
+            <p id="joke-display">"Chuck Norris doesn't read books. He stares them down until he gets the information he wants."</p>
         </div>
 
-        <button class="kick-btn" onclick="getChuckFact()">
-            INITIATE ROUNDHOUSE KICK
-        </button>
+        <div class="actions">
+            <button class="btn-kick" onclick="getChuckFact()">ROUNDHOUSE KICK (FACT)</button>
+        </div>
     </div>
-    <script src="app.js"></script>
-</body>
+    <script src="damme-api.js"></script> </body>
 </html>
