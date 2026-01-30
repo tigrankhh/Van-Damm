@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHUCK NORRIS | Tactical Facts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Jean-Claw Van Damme: Virtual Pet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="system-status">STATUS: OVERLOAD</div>
-            <h1>CHUCK <span class="orange">NORRIS</span></h1>
-        </header>
-
-        <div class="threat-meter">
-            <span class="label">CURRENT THREAT LEVEL</span>
-            <div class="meter-bg"><div id="power-bar" class="meter-fill"></div></div>
+    <div class="game-container">
+        <h1>Jean-Claw Van Damme</h1>
+        
+        <div id="pet-stage">
+            <div id="pet" class="pet-idle">
+                <div class="pet-body">🥋</div>
+                <div class="pet-legs">
+                    <span class="leg left">/</span>
+                    <span class="leg right">\</span>
+                </div>
+            </div>
         </div>
 
-        <div class="display-box">
-            <p id="joke-display">"Chuck Norris doesn't read books. He stares them down until he gets the information he wants."</p>
-        </div>
-
-        <div class="actions">
-            <button class="btn-kick" onclick="getChuckFact()">ROUNDHOUSE KICK (FACT)</button>
+        <div class="ui">
+            <p id="joke-display">"I am fascinated by air. Click a button to train me."</p>
+            <div class="buttons">
+                <button onclick="doSplits()">Do The Splits</button>
+                <button onclick="tellJoke()">Local Wisdom</button>
+                <button onclick="getDammeWisdom()">Global Wisdom</button>
+            </div>
         </div>
     </div>
-    <script src="damme-api.js"></script> </body>
+    <script src="script.js"></script>
+    <script src="damme-api.js"></script>
+</body>
 </html>
