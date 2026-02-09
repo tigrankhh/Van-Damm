@@ -7,7 +7,8 @@ async function getChuckFact() {
     try {
         // 1. Try your backend/API first
         // Use a relative path so it works everywhere in the globaaal network!
-        const response = await fetch('/api/joke/random');
+      // Change your fetch line to this:
+const response = await fetch('http://localhost:5000/api/joke/random');
         
         if (!response.ok) throw new Error("Connection refused by the legend.");
         
@@ -38,3 +39,4 @@ async function getChuckFact() {
 }
 
 jokeBtn.addEventListener('click', getChuckFact);
+
