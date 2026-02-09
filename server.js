@@ -1,20 +1,30 @@
 const express = require('express');
-const cors = require('cors');
 const axios = require('axios');
+const cors = require('cors');
+const path = require('path');
 const internalWisdom = require('./internal_wisdom.json');
 
 const app = express();
+const PORT = 5000;
+
 app.use(cors());
 
-app.get('/api/joke', async (req, res) => {
+// --- 1. SERVE STATIC FILES ---
+// This tells Express to look for index.html, style.css, etc. in your main folder
+app.use(express.static(path.join(__dirname, './')));
+
+// --- 2. THE JOKE ENDPOINT ---
+app.get('/api/joke/random', async (req, res) => {
     try {
         const response = await axios.get('https://api.chucknorris.io/jokes/random');
-        res.json({ joke: response.data.value });
+        res.json({ value: response.data.value });
     } catch (err) {
-        // If Chuck blocks the internet, use your array!
+        console.log("API failed, using internal wisdom...");
         const randomJoke = internalWisdom[Math.floor(Math.random() * internalWisdom.length)];
-        res.json({ joke: randomJoke });
+        res.json({ value: randomJoke });
     }
 });
 
-app.listen(5000, () => console.log('Globaaal backend spinning on port 5000'));
+app.listen(PORT, () => {
+    console.log(`🚀 Network Headquarters live at: http://localhost:${PORT}`);
+});
